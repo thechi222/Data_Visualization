@@ -4,9 +4,10 @@ library(readxl)
 library(tidyverse)
 library(sf)
 setwd("C:/Users/etien/OneDrive/桌面/視覺化期末")
+
 # 1. 直接讀取 Excel 檔案中對應的工作表 (Sheets)
-df_crime <- read_excel("台北犯罪與超商距離分析.xlsx", sheet = "犯罪總表_最近超商距離")
-df_stores <- read_excel("台北犯罪與超商距離分析.xlsx", sheet = "台北超商點位")
+df_crime <- read_excel("台北犯罪與超商距離分析_20m.xlsx", sheet = "犯罪總表_最近超商距離")
+df_stores <- read_excel("台北犯罪與超商距離分析_20m.xlsx", sheet = "台北超商點位")
 
 # 2. 資料清理：移除經緯度為空值 (NA) 的資料
 df_crime_clean <- df_crime %>% filter(!is.na(估算緯度) & !is.na(估算經度))
